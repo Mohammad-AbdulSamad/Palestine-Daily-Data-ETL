@@ -50,12 +50,19 @@ This project uses **GitHub Actions** to run `etl.py` every day at 00:00 UTC.
 ## 🗂️ Folder Structure
 
 palestine-daily-data-etl/
+
   ├── data/ # Output CSV files (auto-updated)
+  
   ├── etl.py # Main ETL script
+  
   ├── requirements.txt # Python dependencies
+  
   └── .github/
+  
   └── workflows/
+  
   └── daily_etl.yml # GitHub Actions workflow
+
 ---
 
 ## 📊 Visualization
