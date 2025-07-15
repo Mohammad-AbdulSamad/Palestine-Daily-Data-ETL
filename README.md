@@ -50,12 +50,12 @@ This project uses **GitHub Actions** to run `etl.py` every day at 00:00 UTC.
 ## 🗂️ Folder Structure
 
 palestine-daily-data-etl/
-├── data/ # Output CSV files (auto-updated)
-├── etl.py # Main ETL script
-├── requirements.txt # Python dependencies
-└── .github/
-└── workflows/
-└── daily_etl.yml # GitHub Actions workflow
+  ├── data/ # Output CSV files (auto-updated)
+  ├── etl.py # Main ETL script
+  ├── requirements.txt # Python dependencies
+  └── .github/
+  └── workflows/
+  └── daily_etl.yml # GitHub Actions workflow
 ---
 
 ## 📊 Visualization
@@ -80,7 +80,7 @@ To visualize the data in **Tableau Public**:
 
 Data provided by [Tech For Palestine](https://data.techforpalestine.org/).
 
-Built by [Your Name](https://github.com/YOUR_USERNAME) to raise awareness and increase access to transparent, up-to-date information.
+Built by Mohammad Abdul-Samad, to raise awareness and increase access to transparent, up-to-date information.
 
 ---
 
