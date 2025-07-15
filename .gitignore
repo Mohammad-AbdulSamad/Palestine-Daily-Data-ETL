@@ -1,0 +1,21 @@
+# Virtual environment files and folders
+Lib/
+include/
+Scripts/
+pyvenv.cfg
+
+# IDE/editor configs
+.idea/
+
+# Secrets file
+.env
+
+# __pycache__ and compiled files
+__pycache__/
+*.pyc
+*.pyo
+
+# DO NOT ignore CSVs — we want to track them!
+# data/*.csv  ← remove this if present
+# created by virtualenv automatically
+
