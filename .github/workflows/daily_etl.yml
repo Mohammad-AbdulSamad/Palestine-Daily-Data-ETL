@@ -26,6 +26,12 @@ jobs:
       - name: Run ETL script
         run: python etl.py
 
+      - name: Upload CSVs to Google Drive
+        env:
+          GDRIVE_CREDENTIALS_JSON: ${{ secrets.GDRIVE_CREDENTIALS_JSON }}
+          GDRIVE_FOLDER_ID: 1oIBkFbsf1n5nJM1UUzgBIUWP2KuoQzyP
+        run: python upload_to_drive.py
+
       - name: Commit updated CSVs
         run: |
           git config user.name "github-actions[bot]"
