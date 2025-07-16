@@ -1,94 +1,126 @@
-# 🇵🇸 Palestine Daily Data ETL
+# 🇵🇸 Palestine Daily Data ETL & Live Dashboard
 
-[![Daily ETL](https://github.com/YOUR_USERNAME/palestine-daily-data-etl/actions/workflows/daily_etl.yml/badge.svg)](https://github.com/YOUR_USERNAME/palestine-daily-data-etl/actions/workflows/daily_etl.yml)
-
-A fully automated ETL (Extract, Transform, Load) pipeline that fetches daily humanitarian data from [Tech For Palestine](https://data.techforpalestine.org/) APIs, transforms it into clean CSV files, and makes it ready for public visualization via Tableau Public.
+> **Real-time humanitarian tracking using public data, GitHub Actions, and Tableau**
 
 ---
 
-## 🎯 Purpose
+## 📊 Project Overview
 
-This project aims to **automate the collection and structuring of humanitarian data** from Gaza and the West Bank, enabling **transparent, real-time dashboards** that highlight:
+This project automatically fetches **daily humanitarian data** from [TechForPalestine](https://data.techforpalestine.org) APIs, processes it, and updates live datasets and charts.
 
-- Civilian casualties  
-- Journalist fatalities  
-- Daily reports  
-- Infrastructure damage  
-- West Bank settler attacks  
-- Summary statistics  
+It is designed to raise awareness and provide real-time visibility into the situation in **Gaza and the West Bank**, showcasing:
 
-All data is saved in flat `.csv` format for easy public use and integration into visualization tools.
+* Civilian casualties
+* Press victims
+* Infrastructure damage
+* Summary statistics and trends
 
 ---
 
-## 📦 Output
+## ⚙️ Tech Stack
 
-The pipeline produces the following datasets in the `data/` folder:
-
-- `killed_in_gaza.csv`
-- `press_killed_in_gaza.csv`
-- `summary.csv`
-- `daily_casualties_gaza.csv`
-- `daily_casualties_west_bank.csv`
-- `infrastructure_damaged.csv`
-
-Each file includes a `fetched_at` column to track the last updated date.
+| Layer            | Tool/Service            | Purpose                          |
+| ---------------- | ----------------------- | -------------------------------- |
+| Data Source      | TechForPalestine API    | Live humanitarian data           |
+| ETL + Automation | Python + GitHub Actions | Daily fetch + transform + upload |
+| Storage          | Google Drive            | Synced CSVs for Tableau          |
+| Visualization    | Tableau Public          | Dashboards and charts            |
+| Deployment       | Tableau Public (hosted) | Shared public access             |
 
 ---
 
-## ⚙️ How It Works
+## 🚀 Live Dashboard
 
-This project uses **GitHub Actions** to run `etl.py` every day at 00:00 UTC.
-
-1. Fetches live data from TechForPalestine APIs.
-2. Parses and normalizes nested JSON structures.
-3. Saves output to `/data` as CSV files.
-4. Commits and pushes updated data back to the repository.
+> 🌐 **[Click here to view the public Tableau dashboard](https://public.tableau.com/app/profile/your-username/viz/PalestineCasualtiesTracker/MainDashboard)**
+> *(Auto-refreshes with updated Google Drive CSVs daily)*
 
 ---
 
-## 🗂️ Folder Structure
+## 📑 How It Works
 
-palestine-daily-data-etl/
-
-  ├── data/ # Output CSV files (auto-updated)
-  
-  ├── etl.py # Main ETL script
-  
-  ├── requirements.txt # Python dependencies
-  
-  └── .github/
-  
-  └── workflows/
-  
-  └── daily_etl.yml # GitHub Actions workflow
+1. **ETL script (`etl.py`)** fetches JSON from 6 endpoints
+2. Normalizes + stores each as a `.csv` file in `/data`
+3. GitHub Actions runs this every 24 hours
+4. Updated CSVs are committed + pushed to GitHub
+5. Then uploaded to a shared Google Drive folder
+6. Tableau Public dashboard is connected to these Google Drive CSVs
+7. Dashboard refreshes automatically with new data
 
 ---
 
-## 📊 Visualization
+## 🛠️ Setup Instructions
 
-To visualize the data in **Tableau Public**:
+### Clone & Run ETL Locally
 
-1. Sync this repo’s `data/` folder to **Google Drive** or **OneDrive** (e.g., using GitHub → Drive sync tools).
-2. Connect Tableau Public to the synced CSVs.
-3. Build dashboards and set them to auto-refresh from the cloud source.
+```bash
+git clone https://github.com/Mohammad-AbdulSamad/Palestine-Daily-Data-ETL.git
+cd Palestine-Daily-Data-ETL
+pip install -r requirements.txt
+python etl.py
+```
 
----
+### GitHub Actions Automation
 
-## 🚀 Deployment Status
+* Daily cron job: runs ETL + uploads fresh CSVs
+* `.github/workflows/daily_etl.yml`
 
-- ✅ Daily automation via GitHub Actions  
-- ✅ Modular and extensible ETL structure  
-- 🔜 Coming Soon: Google Drive sync for Tableau Public
+### Google Drive Integration
 
----
-
-## 🙌 Credits
-
-Data provided by [Tech For Palestine](https://data.techforpalestine.org/).
-
-Built by Mohammad Abdul-Samad, to raise awareness and increase access to transparent, up-to-date information.
+* Uses a Google service account
+* Uploads/replaces CSVs in a shared folder
+* Credentials and folder ID are stored as GitHub secrets
 
 ---
 
-## 🕊️ Free Palestine.
+## 📊 Sample Visualizations
+
+* Time series: daily killed/injured in Gaza & West Bank
+* Map view: geographic spread of casualties
+* Pie/bar charts: gender/age breakdown, press/civil defense victims
+* Trend: infrastructure damage by type (schools, mosques, homes)
+
+---
+
+## 🎨 Screenshots
+
+![dashboard-preview](assets/dashboard_screenshot.png)
+
+---
+
+## 🌟 Why This Project Matters
+
+* Real-world impact: visualizing injustice with real-time data
+* Great portfolio piece: automation, ETL, APIs, dashboarding
+* Clean, reproducible, and open-source pipeline
+
+---
+
+## 🚩 Future Improvements
+
+* Add database support (e.g., Supabase) for analysis
+* Host the dashboard on a personal website (embed iframe)
+* Add email/Slack notifications when data updates
+* Expand to other humanitarian datasets
+
+---
+
+## 📚 Credits
+
+* Data Source: [TechForPalestine](https://data.techforpalestine.org)
+* Dev: Mohammad Abdul-Samad
+
+---
+
+## 🌐 License
+
+This project is open source and available under the [MIT License](LICENSE).
+
+---
+
+## 📅 Daily Automation Status
+
+[![Daily ETL](https://github.com/Mohammad-AbdulSamad/Palestine-Daily-Data-ETL/actions/workflows/daily_etl.yml/badge.svg)](https://github.com/Mohammad-AbdulSamad/Palestine-Daily-Data-ETL/actions/workflows/daily_etl.yml)
+
+---
+
+Feel free to fork, star, or contribute ✨
