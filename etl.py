@@ -50,14 +50,29 @@ def store(data, name):
             data = data["data"]
 
         df = pd.json_normalize(data)
+
+        # Basic cleaning
+        df.columns = df.columns.str.strip()
+        df = df.dropna(how="all")  # remove rows that are completely empty
+        df = df.applymap(lambda x: x.strip() if isinstance(x, str) else x)
+
+        # Add region tag
+        if "gaza" in name.lower():
+            df["region"] = "Gaza"
+        elif "west_bank" in name.lower():
+            df["region"] = "West Bank"
+        else:
+            df["region"] = None  # fallback for other datasets
+
+        # Add fetch timestamp
         df["fetched_at"] = date.today().isoformat()
 
+        # Save
         output_path = os.path.join(DATA_DIR, f"{name}.csv")
         df.to_csv(output_path, index=False)
         print(f"✅ Saved: {output_path}")
     except Exception as e:
         print(f"❌ Failed to fetch {name}: {e}")
-
 
 
 
