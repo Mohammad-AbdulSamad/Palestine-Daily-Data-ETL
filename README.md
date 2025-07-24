@@ -1,6 +1,20 @@
-# 🇵🇸 Palestine Daily Data ETL & Live Dashboard
+# Not Just Numbers
 
-> **Real-time humanitarian tracking using public data, GitHub Actions, and Tableau**
+📊 View the interactive dashboard on [Tableau Public](https://public.tableau.com/app/profile/mohammad.abdul.samad6018/viz/Book2_17532731179000/CausaltiesinPalestine)
+
+> A visual story of human impact in Palestine—combining real-time data with a message beyond statistics.
+
+---
+
+## 🇵🇸 Palestine Daily Data ETL & Live Dashboard
+
+This project automates the extraction, transformation, and visualization of real-time data on casualties, infrastructure damage, and journalist deaths in Gaza and the West Bank. It uses:
+- GitHub Actions for daily ETL
+- Tableau Public for interactive dashboards
+- Publicly sourced humanitarian datasets
+
+...
+
 
 ---
 
