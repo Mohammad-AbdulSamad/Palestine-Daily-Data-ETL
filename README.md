@@ -75,15 +75,21 @@ python etl.py
 ## 📊 Sample Visualizations
 
 * Time series: daily killed/injured in Gaza & West Bank
-* Map view: geographic spread of casualties
 * Pie/bar charts: gender/age breakdown, press/civil defense victims
-* Trend: infrastructure damage by type (schools, mosques, homes)
+* KPI: infrastructure damage by type (schools, mosques, homes)
 
 ---
 
 ## 🎨 Screenshots
 
-![dashboard-preview](assets/dashboard_screenshot.png)
+
+<img width="1742" height="906" alt="Screenshot (88)" src="https://github.com/user-attachments/assets/55854be1-d43c-4768-b922-099dd7f30c48" />
+
+
+<img width="1907" height="981" alt="Screenshot (89)" src="https://github.com/user-attachments/assets/05ba6f7c-fd75-4e85-93a8-42bb020e7c27" />
+
+
+<img width="1915" height="977" alt="Screenshot (90)" src="https://github.com/user-attachments/assets/333cd3d9-9180-4b14-8ee8-d128d220515d" />
 
 ---
 
